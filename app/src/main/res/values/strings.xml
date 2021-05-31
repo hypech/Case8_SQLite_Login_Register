@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Case7Full_SQLite</string>
+    <string name="app_name">Case8_SQLite_Login_Register</string>
     <string name="logint">Login</string>
     <string name="etUser_hint">Phone/Email</string>
     <string name="pswHint">Password</string>

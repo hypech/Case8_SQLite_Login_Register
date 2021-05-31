@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.hypech.case7full_sqlite;
+package com.hypech.case8_SQLite_Login_Register;
 
 import androidx.appcompat.app.AppCompatActivity;
 

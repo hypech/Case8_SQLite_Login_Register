@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.hypech.case7full_sqlite;
+package com.hypech.case8_SQLite_Login_Register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class Register extends AppCompatActivity {
 
@@ -54,17 +54,17 @@ public class Register extends AppCompatActivity {
         String email = et_rgsEmail.getText().toString().trim();
         String phonenum = et_rgsPhoneNum.getText().toString().trim();
         //validation
-        if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password1) && !TextUtils.isEmpty(password2)) {
+        if (username.isEmpty() || password1.isEmpty() || phonenum.isEmpty()) {
+            Snackbar.make(et_rgsEmail, "cannot be empty", Snackbar.LENGTH_LONG).setAnchorView(R.id.et_rgsName).show();
+        }else{
             //check two passwords same
             if (password1.equals(password2)) {
                 //put username and pwd into SQLite
                 mDBOpenHelper.add(username, password2, email, phonenum);
-                Toast.makeText(this, username + " Register successfully!", Toast.LENGTH_SHORT).show();
+                Snackbar.make(et_rgsEmail, "Succeed! Click back to Login.", Snackbar.LENGTH_LONG).setAnchorView(R.id.et_rgsName).show();
             } else {
-                Toast.makeText(this, "two passwords are not same. retry.", Toast.LENGTH_SHORT).show();
+                Snackbar.make(et_rgsEmail, "password not match.", Snackbar.LENGTH_LONG).setAnchorView(R.id.et_rgsName).show();
             }
-        } else {
-            Toast.makeText(this, "cannot be empty. ", Toast.LENGTH_SHORT).show();
         }
     }
 }

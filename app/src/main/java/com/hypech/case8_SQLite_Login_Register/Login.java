@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hypech.case7full_sqlite;
+package com.hypech.case8_SQLite_Login_Register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +23,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class Login extends AppCompatActivity {
 
@@ -53,9 +55,9 @@ public class Login extends AppCompatActivity {
             Cursor cursor = mDBOpenHelper.getOneUser(name, password);
 
             if (cursor != null && cursor.getCount() > 0) {
-                Toast.makeText(this, name  + " Login Successful!", Toast.LENGTH_LONG).show();
+                Snackbar.make(etPWD, "Login Succeed!", Snackbar.LENGTH_LONG).setAnchorView(R.id.et_Psw).show();
             } else {
-                Toast.makeText(this, "user name or pwd wrong.", Toast.LENGTH_SHORT).show();
+                Snackbar.make(etUser, "use/pwd not match. Try again.", Snackbar.LENGTH_LONG).setAnchorView(R.id.et_User).show();
             }
         }
     }

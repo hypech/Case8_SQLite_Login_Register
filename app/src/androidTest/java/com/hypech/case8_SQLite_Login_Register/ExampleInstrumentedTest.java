@@ -1,4 +1,4 @@
-package com.hypech.case7full_sqlite;
+package com.hypech.case8_SQLite_Login_Register;
 
 import android.content.Context;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hypech.case7full_sqlite">
+    package="com.hypech.case8_SQLite_Login_Register">
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Case7Core_SQLite">
-        <activity android:name="com.hypech.case7full_sqlite.Register"></activity>
-        <activity android:name="com.hypech.case7full_sqlite.Login" />
-        <activity android:name="com.hypech.case7full_sqlite.MainActivity">
+        <activity android:name="com.hypech.case8_SQLite_Login_Register.Register"></activity>
+        <activity android:name="com.hypech.case8_SQLite_Login_Register.Login" />
+        <activity android:name="com.hypech.case8_SQLite_Login_Register.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
